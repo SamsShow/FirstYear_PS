@@ -4,20 +4,19 @@
 #include <stdlib.h>
 
 
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
 int main() {
-    int a,b;
-    scanf("%d",&a);
-    scanf("\n%d",&b);
-    // Find Minimum of a and b
-    int result = ((a < b) ? a : b);
-    while (result > 0) {
-        if (a % result == 0 && b % result == 0) {
-            break;
-        }
-        result--;
-    }
-    
-    printf("%d",result);
-    
+    int n1, n2;
+
+    //printf("Enter two positive integers: ");
+    scanf("%d %d", &n1, &n2);
+
+    printf("%d",gcd(n1, n2));
     return 0;
+    
 }
